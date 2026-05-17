@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.devsuperior.dscommerce.dto.UserDTO;
 import com.devsuperior.dscommerce.entities.Role;
 import com.devsuperior.dscommerce.entities.User;
 import com.devsuperior.dscommerce.projections.UserDetailsProjection;
@@ -35,5 +36,15 @@ public class UserService implements UserDetailsService {
 		}
 		
 		return user;
+	}
+
+	public User authenticated() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public UserDTO getMe() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
