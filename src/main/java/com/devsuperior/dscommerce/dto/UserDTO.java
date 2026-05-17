@@ -15,23 +15,17 @@ public class UserDTO {
     private String email;
     private String phone;
     private LocalDate birthDate;
-    private List<String> roles = new ArrayList<>();
+   
     
-	public UserDTO(Long id, String name, String email, String phone, LocalDate birthDate) {
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.phone = phone;
-		this.birthDate = birthDate;
-	}
-    
+    private List <String> roles = new ArrayList<>();
+
 	public UserDTO(User entity) {
 		id = entity.getId();
 		name = entity.getName();
 		email = entity.getEmail();
 		phone = entity.getPhone();
 		birthDate = entity.getBirthDate();
-		for (GrantedAuthority role : entity.getAuthorities()) {
+		for (GrantedAuthority role: entity.getRoles()) {
 			roles.add(role.getAuthority());
 		}
 	}
@@ -59,4 +53,6 @@ public class UserDTO {
 	public List<String> getRoles() {
 		return roles;
 	}
+	    
+    
 }
